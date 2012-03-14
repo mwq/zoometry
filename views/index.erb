@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+  </head>
+  <body>
+
+
+
+    <div class='container'>
+
+      <ul class="breadcrumb" style="width: 100%">
+
+        <% @links.each do |name,link| %>
+          <li>
+          <span class="divider">/</span>
+
+          <a href="<%= link %>"><%= name %></a>
+          </li>
+        <% end %>
+
+      </ul>
+
+      <h1><%= @path %></h1>
+      <h2>data</h2>
+      <pre><%= @data %></pre>
+      <h2>stat</h2>
+<pre>
+<% @stats.each do |k,v| %>
+<%= "#{k}: #{v}" %> 
+<% end %>
+</pre>
+      <h2>children</h2>
+      <ul>
+        <% @children.each do |child| %>
+          <li><a href="<%= @path unless @path == '/'%>/<%= child %>"><%= child %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </body>
+</html>
