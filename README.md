@@ -11,6 +11,6 @@ bundle install
 copy config/zookeeper.conf.example to config/zookeeper.conf and list the servers in your zookeeper cluster
 
 ```
-ruby zoometry.rb
+thin start
 ```
 
